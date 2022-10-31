@@ -11,8 +11,8 @@ import com.byrnx.dictionaryapp.feature_dictionary.domain.models.WordInfo
 data class WordInfoEntity(
     val license: License?,
     val meanings: List<Meaning>,
-    val phonetic: String,
-    val phonetics: List<Phonetic>,
+    val phonetic: String?,
+    val phonetics: List<Phonetic?>? = emptyList(),
     val sourceUrls: List<String>,
     val word: String,
     @PrimaryKey val id: Int? = null

@@ -24,7 +24,13 @@ fun WordInfoItem(
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
         )
-        Text(text = wordInfo.phonetic, fontWeight = FontWeight.Light)
+        wordInfo.phonetics?.let { phonetics ->
+            if (phonetics.isNotEmpty()) {
+                phonetics.forEach { phonetic ->
+                    Text(text = phonetic.toString(), fontWeight = FontWeight.Light)
+                }
+            }
+        }
         Spacer(modifier = Modifier.height(16.dp))
         wordInfo.sourceUrls.forEach { url ->
             Text(text = url)

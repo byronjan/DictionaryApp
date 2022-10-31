@@ -8,7 +8,7 @@ import com.byrnx.dictionaryapp.feature_dictionary.data.local.entities.WordInfoEn
 
 @Database(
     entities = [WordInfoEntity::class],
-    version = 2,
+    version = 5,
     exportSchema = true
 )
 @TypeConverters(Converters::class)

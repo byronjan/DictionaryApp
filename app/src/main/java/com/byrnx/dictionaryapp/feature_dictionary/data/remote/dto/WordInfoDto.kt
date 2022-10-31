@@ -2,7 +2,6 @@ package com.byrnx.dictionaryapp.feature_dictionary.data.remote.dto
 
 
 import com.byrnx.dictionaryapp.feature_dictionary.data.local.entities.WordInfoEntity
-import com.byrnx.dictionaryapp.feature_dictionary.domain.models.WordInfo
 import com.google.gson.annotations.SerializedName
 
 data class WordInfoDto(
@@ -11,9 +10,9 @@ data class WordInfoDto(
     @SerializedName("meanings")
     val meanings: List<MeaningDto>,
     @SerializedName("phonetic")
-    val phonetic: String,
+    val phonetic: String?,
     @SerializedName("phonetics")
-    val phonetics: List<PhoneticDto>,
+    val phonetics: List<PhoneticDto?>? = emptyList(),
     @SerializedName("sourceUrls")
     val sourceUrls: List<String>,
     @SerializedName("word")
@@ -24,7 +23,7 @@ data class WordInfoDto(
             license = license?.toLicense(),
             meanings = meanings.map { it.toMeaning() },
             phonetic = phonetic,
-            phonetics = phonetics.map { it.toPhonetic() },
+            phonetics = phonetics?.map { it?.toPhonetic() },
             sourceUrls = sourceUrls,
             word = word
         )

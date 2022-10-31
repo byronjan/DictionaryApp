@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "185f892ccffd33a63aa178f1b1f151ef",
+    "identityHash": "a99025e054753f329e56ae31c1d4b5bb",
     "entities": [
       {
         "tableName": "WordInfoEntity",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`license` TEXT, `meanings` TEXT NOT NULL, `phonetic` TEXT NOT NULL, `phonetics` TEXT NOT NULL, `sourceUrls` TEXT NOT NULL, `word` TEXT NOT NULL, `id` INTEGER, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`license` TEXT, `meanings` TEXT NOT NULL, `phonetic` TEXT NOT NULL, `phonetics` TEXT, `sourceUrls` TEXT NOT NULL, `word` TEXT NOT NULL, `id` INTEGER, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "license",
@@ -30,7 +30,7 @@
             "fieldPath": "phonetics",
             "columnName": "phonetics",
             "affinity": "TEXT",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "sourceUrls",
@@ -64,7 +64,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '185f892ccffd33a63aa178f1b1f151ef')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a99025e054753f329e56ae31c1d4b5bb')"
     ]
   }
 }
